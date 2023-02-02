@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class Mesto1Test {
 
-    String bearerToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdkMzE0MGQzYjg2YTAwM2Q2N2Q5ODkiLCJpYXQiOjE2NzQ5Nzc1MDQsImV4cCI6MTY3NTU4MjMwNH0.cUnePyn9GdVVrYKOGu2xS9zH4Y4T6jLP3CGTHJRmeLQ";
+    String bearerToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdkMzE0MGQzYjg2YTAwM2Q2N2Q5ODkiLCJpYXQiOjE2NzUzMDIyODYsImV4cCI6MTY3NTkwNzA4Nn0.BkfRKJ6pZCAmwQ9pfQFsT8Z2Igj5PBvr_l9pT37cThM";
 
     @Before
     public void setUp() {
@@ -46,7 +46,7 @@ public class Mesto1Test {
         given()
                 .auth().oauth2(bearerToken) // Передаём токен для аутентификации
                 .get("/api/users/me") // Делаем GET-запрос
-                .then().assertThat().body("data.name", equalTo("Incorrect Name")); // Проверяем, что имя соответствует ожидаемому
+                .then().assertThat().body("data.name", equalTo("Василий Васильев")); // Проверяем, что имя соответствует ожидаемому
     }
 
     @Step("Take the first photo from the list")
